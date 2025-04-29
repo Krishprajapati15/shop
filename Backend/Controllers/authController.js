@@ -15,7 +15,6 @@ export const registerController = async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Create a new user
     const newUser = new User({ email, password: hashedPassword });
     await newUser.save();
 

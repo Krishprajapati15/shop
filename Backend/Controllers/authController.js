@@ -31,7 +31,6 @@ export const loginController = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Find the user by email
     const user = await User.findOne({ email });
     if (!user) {
       return res

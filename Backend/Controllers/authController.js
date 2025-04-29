@@ -45,7 +45,6 @@ export const loginController = async (req, res) => {
         .json({ status: false, message: "Invalid email or password 2" });
     }
 
-    // Generate a JWT token
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET_KEY, {
       expiresIn: "1h",
     });

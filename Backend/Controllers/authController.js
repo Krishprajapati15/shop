@@ -49,7 +49,6 @@ export const loginController = async (req, res) => {
       expiresIn: "1h",
     });
 
-    // Set the token as a cookie
     let options = {
       maxAge: 1000 * 60 * 15, // would expire after 15 minutes
       httpOnly: false, // The cookie only accessible by the web server

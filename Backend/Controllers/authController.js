@@ -50,11 +50,10 @@ export const loginController = async (req, res) => {
     });
 
     let options = {
-      maxAge: 1000 * 60 * 15, // would expire after 15 minutes
-      httpOnly: false, // The cookie only accessible by the web server
-      signed: false, // Indicates if the cookie should be signed
+      maxAge: 1000 * 60 * 15,
+      httpOnly: false,
+      signed: false,
     };
-    // console.log(token);
     res.cookie("token", token);
     res.status(200).json({ status: true, message: "Login successful" });
   } catch (error) {
